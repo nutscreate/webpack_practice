@@ -12,13 +12,16 @@ module.exports = {
     module:{
         rules:[
             {
-                test:/\.css/,
+                test: /\.(css|scss|sass)$/,
                 use:[
                     {
                         loader:MiniCssExtractPlugin.loader,
                     },
                     {
                         loader:'css-loader',
+                    },
+                    {
+                        loader:'sass-loader',
                     },
                 ],
             },
@@ -48,16 +51,20 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename:'./stylesheets/main.css',
+          filename: './stylesheets/main.css',
         }),
         new HtmlWebpackPlugin({
-            template:'./src/templates/index.pug',
-            filename:'index.html',
+          template: './src/templates/index.pug',
+          filename: 'index.html',
         }),
         new HtmlWebpackPlugin({
-            template:'./src/templates/access.pug',
-            filename:'access.html',
+          template: './src/templates/access.pug',
+          filename: 'access.html',
+        }),
+        new HtmlWebpackPlugin({
+          template: './src/templates/members/taro.pug',
+          filename: 'members/taro.html',
         }),
         new CleanWebpackPlugin(),
     ],
-}
+};
