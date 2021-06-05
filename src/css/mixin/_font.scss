@@ -1,0 +1,37 @@
+@function get_vw($size, $viewport: 320){
+$rate: 100 / $viewport;
+@return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+font-size: $font_size * 1px;
+font-size: get_vw($font_size);
+}
+
+
+$font-family__alpha-numeral :'Teko', sans-serif;
+
+@mixin font-family__alpha-numeral-300 {
+  font-family: $font-family__alpha-numeral;
+  font-weight:300;
+}
+
+@mixin font-family__alpha-numeral-400 {
+  font-family: $font-family__alpha-numeral;
+  font-weight:400;
+}
+
+@mixin font-family__alpha-numeral-500 {
+  font-family: $font-family__alpha-numeral;
+  font-weight:500;
+}
+
+@mixin font-family__alpha-numeral-600 {
+  font-family: $font-family__alpha-numeral;
+  font-weight:600;
+}
+
+@mixin font-family__alpha-numeral-700 {
+  font-family: $font-family__alpha-numeral;
+  font-weight:700;
+}

@@ -1,0 +1,96 @@
+@import './foundation/reset';
+@import './setting/color';
+@import './mixin/font';
+@import './mixin/width';
+@import './layout/l-header';
+@import './layout/l-index-kv';
+
+
+// @import './menu.scss';
+
+/* html, body, div, p, img, h1, h2, h3, h4, h5 {
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?xwohds');
+    src:  url('../fonts/icomoon.eot?xwohds#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?xwohds') format('truetype'),
+    url('../fonts/icomoon.woff?xwohds') format('woff'),
+    url('../fonts/icomoon.svg?xwohds#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    }
+
+::placeholder {
+    color: gray;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.container {
+    width: 980px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.5em;
+    background-image: url('../img/icon.png');
+  }
+
+.main-image {
+    background-image: url('../img/thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 2em;
+    margin: 1em 0;
+  }
+$icon-size: 64px;
+
+  .icon {
+    background-color: #fff;
+    width: $icon-size;
+    height: $icon-size;
+    border-radius: $icon-size/2;
+    padding: 4px;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+  }
+
+  aside {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+  }
+
+  header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .wrap {
+    display: flex;
+    transform: scale(2,2);
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
+ */

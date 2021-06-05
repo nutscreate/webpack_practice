@@ -3,14 +3,32 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+// production or development
 module.exports = {
-    entry:'./src/javascripts/main.js',
+    mode: 'development',
+    devtool: 'source-map',
+    entry:'./src/js/main.js',
     output:{
         path:path.resolve(__dirname, './dist'),
-        filename:'./javascripts/main.js',
+        filename:'./js/main.js',
+        publicPath: '/',
     },
     module:{
         rules:[
+            {
+                test: /\.js/,
+                exclude: /node_modules/,
+                use: [
+                  {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: [
+                        ['@babel/preset-env', { "targets": "> 0.25%, not dead" }],
+                      ],
+                    },
+                  },
+                ],
+              },
             {
                 test: /\.(css|scss|sass)$/,
                 use:[
@@ -19,6 +37,21 @@ module.exports = {
                     },
                     {
                         loader:'css-loader',
+                        options: { sourceMap: true },
+                    },
+                    {
+                      loader: "postcss-loader",
+                      options: {
+                        // PostCSS側でもソースマップを有効にする
+                        // sourceMap: true,
+                        postcssOptions: {
+                          plugins: [
+                            // Autoprefixerを有効化
+                            // ベンダープレフィックスを自動付与する
+                            ["autoprefixer", { grid: true }],
+                          ],
+                        },
+                      },
                     },
                     {
                         loader:'sass-loader',
@@ -26,44 +59,33 @@ module.exports = {
                 ],
             },
             {
-                test:/\.png|.jpg/,
+                test:/\.gif|png|jpg|jpeg|svg/,
                 type:'asset/resource',
                 generator:{
-                    filename:'images/[name][ext]',
+                    filename:'img/[name][ext]',
                 },
             },
             {
-                test:/\.pug/,
-                use:[
-                   {
-                       loader:'html-loader',
-                   },
-                   {
-                       loader:'pug-html-loader',
-                       options: {
-                           pretty:true,
-
-                       }
-                   },
-            ],
+              test: /\.(woff|woff2|eot|ttf|svg)$/,
+              type:'asset/resource',
+              generator:{
+                  filename:'fonts/[name][ext]',
+              },
+            },
+            {
+                loader: 'image-webpack-loader',
+                options: {
+                  mozjpeg: {
+                    progressive: true,
+                    quality: 65,
+                  },
+                },
             },
         ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: './stylesheets/main.css',
-        }),
-        new HtmlWebpackPlugin({
-          template: './src/templates/index.pug',
-          filename: 'index.html',
-        }),
-        new HtmlWebpackPlugin({
-          template: './src/templates/access.pug',
-          filename: 'access.html',
-        }),
-        new HtmlWebpackPlugin({
-          template: './src/templates/members/taro.pug',
-          filename: 'members/taro.html',
+          filename: './css/main.css',
         }),
         new CleanWebpackPlugin(),
     ],
