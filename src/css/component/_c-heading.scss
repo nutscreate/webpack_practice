@@ -1,0 +1,224 @@
+@mixin c-heading__adj {
+
+  &.-ta-center {
+    text-align: center;
+  }
+  &.-ta-left {
+    text-align: left;
+  }
+  &.-ta-right {
+    text-align: right;
+  }
+
+  &.-mb-xs {
+    margin-bottom: 8px;
+  }
+
+  &.-mb-s {
+    margin-bottom: 16px;
+  }
+
+  &.-mb-m {
+    margin-bottom: 24px;
+  }
+
+  &.-mb-l {
+    margin-bottom: 32px;
+  }
+
+  &.-mb-xl {
+    margin-bottom: 40px;
+  }
+
+}
+
+.c-heading-logo {
+  font-size: 42px;
+  font-size: 4.2rem;
+  line-height: 1;
+  color: $color__overlay-txt;
+  @include font-family__en(600);
+  mix-blend-mode: overlay;
+
+  @include sp-lg {
+    font-size: 51px;
+    font-size: 5.1rem;
+
+    @include tb-sm {
+      font-size: 60px;
+      font-size: 6.0rem;
+
+      @include pc {
+        // font-size: 69px;
+        // font-size: 6.9rem;
+        font-size: 80px;
+        font-size: 8.0rem;
+      }
+    }
+  }
+  @include c-heading__adj;
+}
+
+
+.c-heading-1 {
+  line-height: 1;
+  width: 100%;
+  text-align: center;
+  color: $color__overlay-txt;
+  @include position("center-center");
+  font-size: 39px;
+  font-size: 3.9rem;
+  top: 52%;
+  @include font-family__en(600);
+  z-index: 3;
+
+  @include sp-lg {
+    font-size: 45px;
+    font-size: 4.5rem;
+
+    @include tb-sm {
+      font-size: 48px;
+      font-size: 4.8rem;
+
+      @include tb {
+        font-size: 51px;
+        font-size: 5.1rem;
+
+        @include pc {
+          font-size: 60px;
+          font-size: 6.0rem;
+        }
+      }
+    }
+  }
+}
+
+.parent-pageid-2 .c-heading-1,
+.parent-pageid-8 .c-heading-1 {
+  font-size: 24px;
+  font-size: 2.4rem;
+  top: 50%;
+  font-family: $font-family__jpn;
+  @include sp-lg {
+    font-size: 30px;
+    font-size: 3.0rem;
+
+    @include tb-sm {
+      font-size: 33px;
+      font-size: 3.3rem;
+
+      @include tb {
+        font-size: 36px;
+        font-size: 3.6rem;
+
+        @include pc {
+          font-size: 45px;
+          font-size: 4.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+.c-heading-2 {
+  font-size: 33px;
+  font-size: 3.3rem;
+  line-height: 1;
+  color: $color__heading-txt;
+
+  @include sp-lg {
+    font-size: 39px;
+    font-size: 3.9rem;
+
+    @include tb-sm {
+      font-size: 42px;
+      font-size: 4.2rem;
+
+      @include tb {
+        font-size: 45px;
+        font-size: 4.5rem;
+
+        @include pc {
+          font-size: 60px;
+          font-size: 6.0rem;
+        }
+      }
+    }
+  }
+
+  .c-heading-2-main {
+    @include font-family__en(600);
+  }
+  .c-heading-2-sub {
+    font-family: $font-family__jpn;
+    font-size: 35%;
+    margin-top: 0.3em;
+  }
+
+  @include c-heading__adj;
+
+}
+
+.c-heading-3 {
+  line-height: 1;
+  color: $color__heading-txt;
+
+  /* .c-heading-3-sub {
+    @include font-family__en-700;
+    font-size: 120px;
+    font-size: 12.0rem;
+    text-transform: uppercase;
+    color: rgba($color: $color__overlay-txt, $alpha: 0.4);
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    @include tb-sm {
+      font-size: 180px;
+      font-size: 18.0rem;
+      }
+  }*/
+  @include c-heading__adj;
+}
+
+.c-heading-3-main {
+  font-family: $font-family__jpn;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: relative;
+  padding-left: 0.8em;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0.4em;
+    height: 0.2em;
+    background-color: $color__heading-txt;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @include sp-lg {
+    font-size: 21px;
+    font-size: 2.1rem;
+    @include tb-sm {
+      font-size: 24px;
+      font-size: 2.4rem;
+      @include tb {
+        font-size: 27px;
+        font-size: 2.7rem;
+        @include pc {
+          font-size: 30px;
+          font-size: 3.0rem;
+        }
+      }
+    }
+  }
+}
+

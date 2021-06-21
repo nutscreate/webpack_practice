@@ -1,0 +1,12 @@
+.c-grid {
+display: grid;
+
+&.-c2 {
+grid-template-columns: 1fr 1fr;
+
+@include tb {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+}
+}

@@ -1,0 +1,15 @@
+@mixin overlay {
+//position: relative;
+ overflow: hidden;
+&:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: $palette__navy, $alpha: 1);
+  opacity: 0.35;
+  @include position("center-center");
+  //mix-blend-mode: overlay;
+  z-index: 1;
+}
+}

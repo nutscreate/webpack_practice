@@ -1,0 +1,24 @@
+@mixin position ($position:"center-cnter"){
+  position: absolute;
+  @if ($position == "center-center") {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @else if ($position == "left-center") {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+@else if ($position == "center-bottom") {
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+@else if ($position == "left-bottom") {
+  left: 0;
+  bottom: 0;
+}
+
+}

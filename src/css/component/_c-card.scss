@@ -1,0 +1,157 @@
+.c-card {
+
+  .c-card__item {
+  position: relative;
+
+    @include tb {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      &:nth-child(odd) {
+        .p-card__details {
+          margin-left: 5.333%;
+          .p-card__bg-txt {
+            left: inherit;
+            right: 0;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        .p-card__photo {
+          order: 2;
+        }
+        .p-card__details {
+          margin-right: 5.333%;
+          order: 1;
+          .p-card__bg-txt {
+            left: 0;
+          }
+
+        }
+      }
+    }
+
+    .p-card__photo {
+      @include tb {
+        width: 38.167%;
+      }
+    }
+
+    .p-card__details {
+      position: relative;
+
+      margin-top: 2.4em;
+      color: $palette__navy;
+      @include tb {
+        margin-top: 0;
+        width:  61.833%;
+      }
+
+      .p-card__ttl {
+        font-size: 18px;
+        font-size: 1.8rem;
+        line-height: 1;
+        font-weight: bold;
+        @include sp-lg {
+          font-size: 21px;
+          font-size: 2.1rem;
+          @include tb-sm {
+            font-size: 24px;
+            font-size: 2.4rem;
+            @include tb {
+              font-size: 21px;
+              font-size: 2.1rem;
+              @include pc {
+                font-size: 24px;
+                font-size: 2.4rem;
+              }
+            }
+          }
+        }
+
+      }
+      .p-card__desc {
+        font-size: 12px;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-top: 1em;
+
+        @include sp-lg {
+          font-size: 14px;
+          font-size: 1.4rem;
+          @include tb-sm {
+            font-size: 16px;
+            font-size: 1.6rem;
+            @include tb {
+              font-size: 14px;
+              font-size: 1.4rem;
+              @include pc {
+                font-size: 16px;
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+      .p-card__bg-txt {
+        font-size: 120px;
+        font-size: 12.0rem;
+        line-height: 1;
+        text-transform: uppercase;
+        color: rgba($color: $palette__blue, $alpha: 0.03);
+        @include font-family__en(700);
+        position: absolute;
+        top: -35%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        @include sp-lg {
+          font-size: 180px;
+          font-size: 18.0rem;
+          @include tb-sm {
+            font-size: 240px;
+            font-size: 24.0rem;
+            @include tb {
+              font-size: 180px;
+              font-size: 18.0rem;
+              top: 50%;
+              transform: translateY(-42.5%);
+              @include pc {
+                font-size: 240px;
+                font-size: 24.0rem;
+                //transform: translateY(-140%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.c-card__item  + .c-card__item {
+  margin-top: 40px;
+
+  @include sp-lg {
+    margin-top: 56px;
+
+    @include tb-sm {
+      margin-top: 72px;
+
+      @include tb {
+        margin-top: 48px;
+        padding-top: 48px;
+        border-top: 1px solid rgba($color: $palette__blue, $alpha: 0.2);
+
+        @include pc {
+          margin-top: 64px;
+          padding-top: 64px;
+
+        }
+      }
+    }
+  }
+}

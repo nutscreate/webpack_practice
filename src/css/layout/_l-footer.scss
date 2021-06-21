@@ -1,0 +1,209 @@
+.l-footer {
+  background-color: $palette__light-gray;
+  padding-top: 48px;
+  padding-bottom: 80px;
+
+  @include sp-lg {
+    padding-top: 64px;
+    padding-bottom: 96px;
+
+    @include tb-sm {
+      padding-top: 80px;
+      padding-bottom: 112px;
+    }
+    @include pc {
+      padding: 120px 0;
+    }
+  }
+
+
+  .l-footer__inner {
+    @extend %block__inner-default;
+
+    .l-footer__copy {
+      @include font-family__en(600);
+      font-size: 21px;
+      font-size: 2.1rem;
+      text-align: center;
+      @include sp-lg {
+        font-size: 24px;
+        font-size: 2.4rem;
+        @include tb-sm {
+          font-size: 27px;
+          font-size: 2.7rem;
+        }
+      }
+    }
+  }
+}
+
+.l-footer__global-nav {
+  margin-top: 1.1em;
+  @include tb-sm {
+    margin-top: 1.8em;
+  }
+
+  .l-footer__menu {
+    display: flex;
+    justify-content: center;
+    @include font-family__en(300);
+    font-size: 16px;
+      font-size: 1.6rem;
+      @include sp-lg {
+        font-size: 18px;
+        font-size: 1.8rem;
+        @include tb-sm {
+          font-size: 21px;
+          font-size: 2.1rem;
+        }
+      }
+
+    .p-nav__item {
+      margin: 0 0.8em;
+
+      a {
+        @include icon-line (0.3em, 0.2em, $palette__blue);
+      }
+    }
+  }
+}
+
+
+
+.l-footer__cat-nav {
+  margin: 1.5em 0 1.8em 0;
+  padding: 0 0 1.8em 0;
+
+  border-top: 1px dashed rgba($color: $palette__blue, $alpha: 0.15);
+  border-bottom: 1px solid rgba($color: $palette__blue, $alpha: 0.15);
+  font-size: 12px;
+  font-size: 1.2rem;
+
+  @include sp-lg {
+    font-size: 14px;
+    font-size: 1.4rem;
+
+    @include tb-sm {
+      font-size: 16px;
+      font-size: 1.6rem;
+      margin: 2.1em 0 2.4em 0;
+      padding: 0 0 2.4em 0;
+    }
+  }
+
+  .l-footer__cat-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .p-nav__item {
+      margin-top: 1.8em;
+      @include tb-sm {
+        margin-top: 2.4em;
+      }
+
+      a {
+        margin: 0 1em;
+        display: inline-block;
+        @include icon-line (0.4em, 0.2em, $palette__blue);
+      }
+    }
+  }
+}
+
+
+
+.l-footer-nav-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(0);
+  will-change: transform;
+  transition: transform .4s ease;
+  z-index: 2;
+
+  .l-footer-nav-fixed__inner {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    width: 100%;
+    @include font-family__en(300);
+    font-size: 12px;
+    font-size: 1.2rem;
+    background-color: rgba($color: $palette__light-gray, $alpha: 0.9);
+
+    @include tb-sm {
+      font-size: 14px;
+      font-size: 1.4rem;
+    }
+
+    .p-nav__item {
+
+      a {
+        width: 100%;
+        height: 48px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 23px;
+        background-position:center top 8px;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        opacity: 0.5;
+        color: $palette__navy;
+
+        @include sp-lg {
+          height: 56px;
+          background-size: 22px;
+          padding-top: 24px;
+          background-position:center top 9px;
+
+
+          @include tb-sm {
+            height: 64px;
+            background-size: 24px;
+            padding-top: 25px;
+            background-position:center top 10px;
+          }
+        }
+
+      }
+      .c-icon__home {
+        background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/icon-home.svg);
+      }
+      .c-icon__gallery {
+        background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/icon-gallery.svg);
+      }
+      .c-icon__profile {
+        background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/icon-profile.svg);
+      }
+      .c-icon__contact {
+        background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/icon-contact.svg);
+      }
+      .c-icon__instagram {
+        background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/icon-instagram.svg);
+        background-size: 15px;
+        background-position:center top 11px;
+
+        @include sp-lg {
+          background-size: 17px;
+          background-position:center top 12px;
+
+
+          @include tb-sm {
+            background-size: 19px;
+            background-position:center top 13px;
+          }
+        }
+      }
+    }
+    .p-nav__current a {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+.l-footer-nav__active {
+  transform: translateY(150%);
+}

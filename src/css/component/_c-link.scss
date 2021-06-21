@@ -1,0 +1,23 @@
+%icon-line {
+  position: relative;
+  &:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1px;
+  }
+}
+
+%icon-line-white {
+  @extend %icon-line;
+  &:before {
+    background-color: $color__overlay-txt;
+  }
+}
+
+%icon-line-blue {
+  @extend %icon-line;
+  &:before {
+    background-color: $palette__blue;
+  }
+}

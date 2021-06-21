@@ -5,7 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 // production or development
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     devtool: 'source-map',
     entry:'./src/js/main.js',
     output:{
@@ -59,14 +59,14 @@ module.exports = {
                 ],
             },
             {
-                test:/\.gif|png|jpg|jpeg|svg/,
+                test:/\.gif|png|jpg|jpeg|svg|webp/,
                 type:'asset/resource',
                 generator:{
                     filename:'img/[name][ext]',
                 },
             },
             {
-              test: /\.(woff|woff2|eot|ttf|svg)$/,
+              test: /\.(woff|woff2|eot|ttf)$/,
               type:'asset/resource',
               generator:{
                   filename:'fonts/[name][ext]',

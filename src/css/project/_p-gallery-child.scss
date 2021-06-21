@@ -1,0 +1,8 @@
+.p-gallery-child {
+  @extend %block__padding;
+
+  .p-gallery-child__inner {
+    @extend %block__inner-default;
+    //@extend %block__inner-equal;
+  }
+}

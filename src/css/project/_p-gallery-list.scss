@@ -1,0 +1,44 @@
+.p-gallery-list {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  @extend %block__padding;
+
+  @include pc {
+    background-attachment: fixed;
+  }
+
+  &:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color:rgba($color: $palette__blue, $alpha: 1);
+    mix-blend-mode: screen;
+    @include position("left-bottom");
+    z-index: -1;
+  }
+
+  .p-gallery-list__inner {
+    @extend %block__inner-default;
+  }
+}
+
+
+.webp .p-gallery-list {
+  background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/gallery-bg-img-1.webp);
+}
+
+.no-webp .p-gallery-list {
+  background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/gallery-bg-img-1.jpg);
+}
+
+.p-gallery-list {
+  @extend %block__margin-top-adj;
+  &:last-child {
+    @extend %block__padding-bottom-adj;
+  }
+}
+

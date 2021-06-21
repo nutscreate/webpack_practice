@@ -31,6 +31,7 @@ html {
   text-rendering: optimizeLegibility; /* 追加 */
   height: 100%; /* 追加 */
   font-size: 62.5%; /* 追加 */
+  background-color:rgba(255,255,255,0);
 }
 
 /* Sections */
@@ -504,4 +505,5 @@ img {
   width: auto;
   height: auto;
   vertical-align: inherit;
+  line-height: 0;
 }

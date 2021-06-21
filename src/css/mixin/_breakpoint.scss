@@ -1,8 +1,28 @@
-$breakpoint-pc-xl: 1350px;
-$breakpoint-pc: 1024px;
-$breakpoint-tl: 768px;
-$breakpoint-sp: 640px;
-$breakpoint-sp-xl: 480px;
-$breakpoint-sp-l: 425px;
-$breakpoint-sp-m: 375px;
-$breakpoint-sp-s: 320px;
+@mixin pc-lg {
+	@media (min-width: 1440px) {
+		@content;
+	}
+}
+@mixin pc {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin tb {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin tb-sm {
+	@media (min-width: 600px) {
+		@content;
+	}
+}
+
+@mixin sp-lg {
+	@media (min-width: 480px) {
+		@content;
+	}
+}

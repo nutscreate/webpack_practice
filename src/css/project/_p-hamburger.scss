@@ -1,0 +1,311 @@
+.p-hamburger-menu__open {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  z-index: 5;
+  @include font-family__en(300);
+  border-radius: 50%;
+  background-color: rgba($color: $palette__navy, $alpha: 0.5);
+
+  @include sp-lg {
+    width: 56px;
+    height: 56px;
+
+    @include tb-sm {
+    width: 64px;
+    height: 64px;
+
+      @include tb {
+        top: 24px;
+        right: 24px;
+      }
+    }
+  }
+
+  &:before {
+    content: "MENU";
+    position: absolute;
+    bottom: 6px;
+    text-align: center;
+    color: $color__overlay-txt;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: block;
+    letter-spacing: 0.2em;
+    width: 48px;
+    @include sp-lg {
+      width: 56px;
+      bottom: 8px;
+      font-size: 13px;
+      font-size: 1.3rem;
+
+      @include tb-sm {
+        width: 64px;
+        bottom: 10px;
+        font-size: 14px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .p-hamburger-menu__line-menu {
+    margin-top: 11px;
+
+    @include sp-lg {
+      margin-top: 14px;
+
+      @include tb-sm {
+        margin-top: 16px;
+      }
+    }
+
+  }
+
+  .p-hamburger-menu__line-menu,
+  .p-hamburger-menu__line-menu:before,
+  .p-hamburger-menu__line-menu:after {
+    content: '';
+    display: block;
+    background-color: $color__overlay-txt;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 1px;
+    transition: all 0.2s linear;
+    @include sp-lg {
+      width: 28px;
+
+      @include tb-sm {
+        width: 32px;
+      }
+    }
+  }
+
+  .p-hamburger-menu__line-menu:before{
+    top: 6px;
+    @include sp-lg {
+      top: 7px;
+
+      @include tb-sm {
+        top: 8px;
+      }
+    }
+  }
+
+  .p-hamburger-menu__line-menu:after {
+    top: 12px;
+    @include sp-lg {
+      top: 14px;
+      @include tb-sm {
+        top: 16px;
+      }
+    }
+  }
+}
+
+#p-hamburger-menu__check:checked ~ .p-hamburger-menu__open {
+  transform: translateY(0);
+  background-color: rgba($color: $color__overlay-txt, $alpha: 0.75);
+
+  &:before {
+    content: "CLOSE";
+    color: $palette__navy;
+  }
+  .p-hamburger-menu__line-menu {
+    background-color: rgba( $color__overlay-txt, 0);
+    &:before{
+      top: 6px;
+      transform: translateX(-50%) rotate(45deg);
+      transition: all 0.2s linear;
+      background-color: $palette__navy;
+      @include sp-lg {
+        top: 7px;
+        @include tb-sm {
+          top: 8px;
+        }
+      }
+    }
+    &:after{
+      top: 6px;
+      transform: translateX(-50%) rotate(-45deg);
+      transition: all 0.2s linear;
+      background-color: $palette__navy;
+      @include sp-lg {
+        top: 7px;
+        @include tb-sm {
+          top: 8px;
+        }
+      }
+    }
+  }
+}
+
+
+#p-hamburger-menu__check {
+  display: none;
+}
+
+.p-hamburger-menu__inner {
+  width: 100%;
+  //min-width: 240px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: -100%;
+  z-index: 4;
+  transition: all 0.2s linear;
+  //background-color: rgba($color: $color__overlay-txt, $alpha: 1.0);
+  background-color: rgba($color: $palette__navy, $alpha: 0.95);
+  overflow:hidden;
+  overflow-y:scroll;
+
+/*   @include pc {
+    display: none;
+    }
+ */
+    .p-hamburger-menu__cont {
+      width: 75%;
+      margin: 0 auto;
+      @include position("center-center");
+      border-bottom: 1px solid rgba($color: $color__overlay-txt, $alpha: 0.5);
+
+  .p-nav__current a {
+    font-weight: 500;
+  }
+  .sub-menu .p-nav__current a {
+    font-weight: bold;
+  }
+  /* .p-nav__item + .p-nav__item {
+    margin-top: 10px;
+  } */
+
+  .p-nav__item {
+    @include font-family__en(300);
+    font-size: 24px;
+    font-size: 2.4rem;
+    line-height: 1;
+
+
+  //&:not(:last-of-type) {
+    a {
+    border-top: 1px solid rgba($color: $color__overlay-txt, $alpha: 0.5);
+    }
+  //}
+
+  a {
+    height: 56px;
+    line-height:56px;
+    width: 100%;
+    padding: 0 16px;
+    display: block;
+    color: $color__overlay-txt;
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/icon-arrow-white.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position:top 48% right 16px;
+
+    @include tb-sm {
+      height: 64px;
+      line-height:64px;
+      padding: 0 24px;
+      background-size: 24px;
+      background-position:top 48% right 24px;
+
+      @include tb {
+        height: 72px;
+        line-height:72px;
+        padding: 0 32px;
+        background-size: 28px;
+        background-position:top 48% right 32px;
+      }
+
+    }
+
+  }
+}
+
+  .sub-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 0 0 16px;
+    border-top: 1px dashed rgba($color: $color__overlay-txt, $alpha: 0.5);
+
+    @include tb-sm {
+      padding: 32px 0 0 24px;
+      @include tb {
+        padding: 40px 0 0 32px;
+      }
+    }
+
+    .p-nav__item {
+      font-family: $font-family__jpn;
+      font-size: 14px;
+      font-size: 1.4rem;
+
+      a {
+        width: inherit;
+        height: inherit;
+        line-height: inherit;
+        background-image: inherit;
+        border: none;
+        padding: 0 0px 24px 0px;
+
+        @include tb-sm {
+          padding: 0 0px 32px 0px;
+          @include tb {
+            padding: 0 0px 40px 0px;
+          }
+        }
+
+        @extend %icon-line-white;
+
+       &:before {
+          background-color: $color__overlay-txt;
+          vertical-align: 4px;
+          margin-right: 4px;
+        }
+
+      }
+    }
+    .p-nav__item {
+      &:not(:last-child) {
+      margin-right: 16px;
+    }
+    }
+  }
+}
+}
+
+#p-hamburger-menu__check:checked ~ .p-hamburger-menu__inner {
+  left: 0;
+}
+
+/* #p-hamburger-menu__check:checked ~ .p-hamburger-menu__back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color:$palette__navy, $alpha: 0.8);
+  transition: all 0.2s linear 0.1s;
+  z-index: 1;
+} */
+
+
+
+.p-hamburger-menu__open {
+  transform: translateY(0);
+  will-change: transform;
+  transition: transform .4s ease;
+}
+
+
+.p-hamburger-menu__active {
+  transform: translateY(-150%);
+}

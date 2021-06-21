@@ -1,0 +1,84 @@
+@mixin c-photo-popup__hover {
+  .c-photo-popup__item {
+    .c-btn__circle  {
+      transition: bottom 0.4s ease 0s, opacity 0.4s ease 0s;
+    }
+    img {
+      transform: scale(1);
+      transition: transform 0.4s ease 0s;
+    }
+    &:before {
+      transition: opacity 0.4s ease 0s;
+    }
+    &:after {
+      content: "CLICK";
+      position: absolute;
+      left: 50%;
+      top: 55%;
+      transform: translate(-50%,-50%);
+      @include font-family__en(300);
+      letter-spacing: 0.15em;
+      color: $color__overlay-txt;
+      font-size: 24px;
+      font-size: 2.4rem;
+      z-index: 2;
+      opacity: 0;
+      transition: top 0.4s ease 0s, opacity 0.4s ease 0s;
+    }
+    &:hover {
+
+      img {
+        transform: scale(1.2);
+        transition: transform 0.4s ease 0s;
+      }
+
+      .c-btn__circle  {
+        bottom: -5em;
+        transition: bottom 0.4s ease 0s, opacity 0.4s ease 0s;
+        opacity: 0;
+      }
+      &:before {
+        opacity: 0.7;
+        transition: opacity 0.4s ease 0s;
+      }
+      &:after {
+        top: 52%;
+        opacity: 0.8;
+        transition: top 0.4s ease 0s, opacity 0.4s ease 0s;
+      }
+    }
+  }
+}
+
+.c-photo-popup {
+  .c-photo-popup__item {
+
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    //padding-top: 61.667%;
+    padding-top: 61.6%;
+
+    .photo-popup__inner {
+      @include overlay;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+
+      .c-btn__circle  {
+        position: absolute;
+        // right: 10px;
+        // bottom: 10px;
+        right: 6.25%;
+        bottom: 10.08065%;
+      }
+    }
+  }
+  @include pc {
+    @include c-photo-popup__hover;
+  }
+}
+

@@ -1,0 +1,32 @@
+.p-index-block {
+  @extend %block__padding;
+  .p-index-block__inner {
+    @extend %block__inner-default;
+  }
+}
+
+
+
+
+/* $easeoriginal:  cubic-bezier(.1,.56,.21,1);
+
+.js-animation {
+	opacity: 0;
+	visibility: hidden;
+  transform: translateY(24px);
+}
+
+.js-animation__on {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0px);
+  transition: transform 0.8s $easeoriginal 0s, opacity 0.4s ease-in 0s;
+
+} */
+
+@for $i from 1 through 50 {
+   /*$DELAY: -0.1s + ($i * 0.1s);
+    .js-animation__on:nth-of-type(#{$i}) {
+    transition: transform 0.8s $easeoriginal $DELAY, opacity 0.4s ease-in $DELAY;
+  } */
+}

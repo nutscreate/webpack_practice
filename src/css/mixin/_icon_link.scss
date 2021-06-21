@@ -1,0 +1,24 @@
+@mixin icon-line($vertical-align, $margin-right, $background-color) {
+  position: relative;
+  &:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1px;
+  vertical-align: $vertical-align;
+  margin-right: $margin-right;
+  background-color: $background-color;
+  position: absolute;
+  left: -0.4em;
+  top: 50%;
+  transform: translateY(-60%);
+  }
+  @include pc {
+    &:hover {
+      &:before {
+        width: 125%;
+        transition: width 0.4s ease 0s;
+      }
+    }
+  }
+}

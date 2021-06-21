@@ -1,39 +1,159 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="<?php bloginfo('template_url'); echo '/dist/css/main.css?' . filemtime( get_stylesheet_directory() . ''); ?>" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <title>Document</title>
-</head>
-<body>
+<?php get_header(); ?>
+
+<main class="l-main">
+
+  <section class="p-index-block">
+    <div class="p-index-block__inner">
+
+      <div class="c-heading-2 -ta-center">
+        <h2 class="c-heading-2-main">GALLERY</h2>
+        <p class="c-heading-2-sub">ギャラリー</p>
+      </div>
+
+      <div class="c-card">
+
+        <?php $post_c = new wp_query(array('pagename'=> 'gallery/flower', 'posts_per_page'=>1, 'post_status'=>'publish', 'order' => 'desc',)); ?>
+          <?php global $post; if ($post_c->have_posts()) : ?>
+            <?php while ($post_c->have_posts()) : $post_c->the_post(); ?>
+            <?php $page = get_post( get_the_ID() );
+              $slug = $page->post_name;
+            ?>
+            <div class="c-card__item">
+              <?php if(has_post_thumbnail()): ?>
+              <div class="p-card__photo"><?php the_post_thumbnail(); ?></div>
+              <?php else: ?>
+              <?php endif; ?>
+
+              <div class="p-card__details">
+                <p class="p-card__ttl"><?php the_title(); ?></p>
+                <p class="p-card__desc"><?php echo get_the_excerpt(); ?></p>
+                <p class="p-card__bg-txt"><?php echo $slug; ?></p>
+                <div class="c-card__btn">
+                  <a href="<?php the_permalink(); ?>" class="c-btn -lg -blue -jpn -c-card__btn"><?php the_title(); ?>一覧ページへ</a>
+                </div>
+              </div>
+            </div>
+
+            <?php endwhile; ?>
+          <?php else : ?>
+        <?php endif; wp_reset_postdata(); ?>
 
 
+        <?php $post_c = new wp_query(array('pagename'=> 'gallery/wildbird', 'posts_per_page'=>1, 'post_status'=>'publish', 'order' => 'desc',)); ?>
+          <?php global $post; if ($post_c->have_posts()) : ?>
+            <?php while ($post_c->have_posts()) : $post_c->the_post(); ?>
+            <?php $page = get_post( get_the_ID() );
+              $slug = $page->post_name;
+            ?>
+            <div class="c-card__item">
+              <?php if(has_post_thumbnail()): ?>
+              <div class="p-card__photo"><?php the_post_thumbnail(); ?></div>
+              <?php else: ?>
+              <?php endif; ?>
 
-<div class="l-index-kv">
-<header class="l-header">
-    <h1 class="l-header__logo">KOICHI ONO PHOTOGRAPHY</h1>
-     <nav class="l-header__menu">
-       <ul class="l-header__list">
-          <li class="l-header__item"><a href="#" title="GARALLEYページへ">GARALLEY</a></li>
-          <li class="l-header__item"><a href="#" title="PROFILEページへ">PROFILE</a></li>
-        </ul>
-      </nav>
-</header>
-<div class="l-index-kv__slide">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/img/index_kv_img_1.jpg" alt="">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/img/index_kv_img_2.jpg" alt="">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/img/index_kv_img_3.jpg" alt="">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/img/index_kv_img_4.jpg" alt="">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/img/index_kv_img_5.jpg" alt="">
-</div>
+              <div class="p-card__details">
+                <p class="p-card__ttl"><?php the_title(); ?></p>
+                <p class="p-card__desc"><?php echo get_the_excerpt(); ?></p>
+                <p class="p-card__bg-txt"><?php echo $slug; ?></p>
+                <div class="c-card__btn">
+                  <a href="<?php the_permalink(); ?>" class="c-btn -lg -blue -jpn -c-card__btn"><?php the_title(); ?>一覧ページへ</a>
+                </div>
+              </div>
+            </div>
 
+            <?php endwhile; ?>
+          <?php else : ?>
+        <?php endif; wp_reset_postdata(); ?>
 
-<div class="l-index-kv__scr">Scroll</div>
-</div>
+        <?php $post_c = new wp_query(array('pagename'=> 'gallery/aviation', 'posts_per_page'=>1, 'post_status'=>'publish', 'order' => 'desc',)); ?>
+          <?php global $post; if ($post_c->have_posts()) : ?>
+            <?php while ($post_c->have_posts()) : $post_c->the_post(); ?>
+            <?php $page = get_post( get_the_ID() );
+              $slug = $page->post_name;
+            ?>
+            <div class="c-card__item">
+              <?php if(has_post_thumbnail()): ?>
+              <div class="p-card__photo"><?php the_post_thumbnail(); ?></div>
+              <?php else: ?>
+              <?php endif; ?>
 
-</body>
-</html>
+              <div class="p-card__details">
+                <p class="p-card__ttl"><?php the_title(); ?></p>
+                <p class="p-card__desc"><?php echo get_the_excerpt(); ?></p>
+                <p class="p-card__bg-txt"><?php echo $slug; ?></p>
+
+                <div class="c-card__btn">
+                  <a href="<?php the_permalink(); ?>" class="c-btn -lg -blue -jpn -c-card__btn"><?php the_title(); ?>一覧ページへ</a>
+                </div>
+              </div>
+            </div>
+
+            <?php endwhile; ?>
+          <?php else : ?>
+        <?php endif; wp_reset_postdata(); ?>
+
+      </div>
+
+    </div>
+
+    <?php get_template_part('includes/_gallery-list'); ?>
+
+  </section>
+
+  <?php $post_c = new wp_query(array('pagename'=> 'profile', 'posts_per_page'=>1, 'post_status'=>'publish', 'order' => 'desc',)); ?>
+  <?php global $post; if ($post_c->have_posts()) : ?>
+  <?php while ($post_c->have_posts()) : $post_c->the_post(); ?>
+  <?php $profile_name = get_field('profile_name'); ?>
+  <?php $profile_ruby = get_field('profile_ruby'); ?>
+  <?php $profile_occupation = get_field('profile_occupation'); ?>
+
+  <section class="p-index-block">
+    <div class="p-index-block__inner">
+      <div class="c-heading-2 -ta-center">
+        <h2 class="c-heading-2-main"><?php the_title(); ?></h2>
+        <p class="c-heading-2-sub">プロフィール</p>
+      </div>
+
+      <div class="p-profile-card">
+
+          <?php
+          $image = get_field('profile_photo');
+          if( !empty( $image ) ): ?>
+          <div class="p-profile-card__img">
+            <div class="p-profile-card__img-inner">
+              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+            </div>
+          </div>
+
+          <?php endif; ?>
+
+        <div class="p-profile-card__details">
+          <?php if( $profile_ruby ): ?>
+            <p class="p-profile__ruby"><?php the_field('profile_ruby'); ?></p>
+          <?php endif; ?>
+
+          <?php if( $profile_name ): ?>
+            <p class="p-profile__name"><?php the_field('profile_name'); ?></p>
+          <?php endif; ?>
+
+          <?php if( $profile_occupation ): ?>
+          <p class="p-profile__occupation"><?php the_field('profile_occupation'); ?></p>
+          <?php endif; ?>
+
+          <div class="p-profile__btn">
+            <a href="<?php echo esc_url(home_url('/profile/')); ?>" class="c-btn -lg -white -jpn -p-profile__btn">プロフィールページへ</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <?php endwhile; ?>
+  <?php else : ?>
+  <?php endif; wp_reset_postdata(); ?>
+
+</main>
+
+<?php get_footer(); ?>

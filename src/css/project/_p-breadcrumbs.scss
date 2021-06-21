@@ -1,0 +1,68 @@
+.p-breadcrumbs {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  letter-spacing: 0.025em;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 3;
+
+  .p-breadcrumbs__inner {
+    width: 93.75%;
+    margin: 0 auto;
+    max-width: 1200px;
+    @include font-family__en(300);
+    color: $color__overlay-txt;
+    font-size: 12px;
+    font-size: 1.2rem;
+
+    @include sp-lg {
+      font-size: 14px;
+      font-size: 1.4rem;
+
+      @include tb-sm {
+        font-size: 16px;
+        font-size: 1.6rem;
+      }
+    }
+
+    a {
+      color: $color__overlay-txt;
+      position: relative;
+      &:before {
+        content: "";
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        background-color: $color__overlay-txt;
+        transition: width 0.4s ease 0s;
+      }
+
+    }
+  }
+}
+
+@include pc {
+  .p-breadcrumbs__inner {
+    a {
+      &:hover {
+        &:before {
+          width: 0;
+          transition: width 0.4s ease 0s;
+        }
+      }
+    }
+  }
+  .parent-pageid-3 .breadcrumb_last {
+    font-size: 80%;
+  }
+}
+
+.parent-pageid-2 .breadcrumb_last,
+.parent-pageid-8 .breadcrumb_last {
+  font-size: 85%;
+}
+

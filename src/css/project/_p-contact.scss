@@ -1,0 +1,107 @@
+.p-contact {
+
+  .p-contact__form {
+    margin-top: 32px;
+
+    @include sp-lg {
+      margin-top: 40px;
+
+      @include tb-sm {
+        margin-top: 48px;
+
+        @include tb {
+          margin-top: 56px;
+        }
+      }
+    }
+
+    .p-contact__item {
+      text-align: left;
+      position: relative;
+      margin-bottom: 2.4em;
+
+      /* + .p-contact__item {
+      margin-top: 2.4em;
+      } */
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="date"],
+      input[type="tel"],
+      textarea,
+      button,
+      select {
+        padding: 1.2em;
+        border: 1px solid #ccc;
+        width: 100%;
+        border-radius: 2px;
+        transition: all 0.3s;
+
+      &:focus,
+      &:hover {
+        outline: none;
+        border-color: #5588BB;
+      }
+
+    }
+
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  }
+
+
+    textarea {
+      resize: none;
+      height: 240px;
+      @include tb-sm {
+        height: 320px;
+      }
+    }
+
+    .error {
+      position: absolute;
+      font-size: 90%;
+      bottom: 0em;
+      right: 0;
+      @include tb-sm {
+        bottom: 0.2em;
+      }
+    }
+
+
+    label {
+      position: absolute;
+      left: 0.5em;
+      top: 0;
+      transform: translateY(-50%);
+      padding: 0 0.5em;
+      color: #333;
+      //color: #1B5A96;
+      display: block;
+      background-color: rgba(255,255,255,1);
+    }
+
+    }
+  }
+}
+
+.mw_wp_form_preview {
+  .p-contact__item {
+    padding: 1.25em 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+  .p-contact__btn-back {
+    margin-right: 8px;
+    @include pc {
+      margin-right: 12px;
+    }
+  }
+  .p-contact__btn-submit {
+    margin-left: 8px;
+    @include pc {
+      margin-left: 12px;
+    }
+  }
+}

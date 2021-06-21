@@ -1,0 +1,174 @@
+%block__padding {
+  padding: 48px 0;
+  @include sp-lg {
+    padding: 64px 0;
+    @include tb-sm {
+      padding: 80px 0;
+      @include pc {
+        padding: 120px 0;
+      }
+    }
+  }
+}
+
+%block__padding-bottom-adj {
+  margin-bottom: -48px;
+  @include sp-lg {
+    margin-bottom: -64px;
+    @include tb-sm {
+      margin-bottom: -80px;
+      @include pc {
+        margin-bottom: -120px;
+      }
+    }
+  }
+}
+
+%block__margin-top-adj {
+  margin-top: 48px;
+  @include sp-lg {
+    margin-top: 64px;
+    @include tb-sm {
+      margin-top: 80px;
+      @include pc {
+        margin-top: 120px;
+      }
+    }
+  }
+}
+
+
+%block__inner-default {
+  width: 90.625%;
+  margin: 0 auto;
+
+  @include tb {
+    width: 93.75%;
+
+    @include pc {
+      max-width: 1200px;
+    }
+  }
+}
+
+%block__inner-sm {
+  width: 90.625%;
+  margin: 0 auto;
+  @include tb {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+
+%block__inner-equal {
+  padding: 4.6875%;
+
+  @include pc {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+%btn__margin-top {
+  margin-top: 24px;
+
+  .c-btn {
+    margin: 0 auto;
+  }
+
+  @include sp-lg {
+    margin-top: 32px;
+
+    @include tb-sm {
+      margin-top: 40px;
+    }
+  }
+}
+
+.c-card__btn {
+  @extend %btn__margin-top;
+
+  @include tb {
+    margin-top: 1.6em;
+
+    .c-btn {
+      margin-right: auto;
+      margin-left: inherit;
+    }
+
+  }
+}
+
+.c-photo-link__btn {
+  @extend %btn__margin-top;
+    @include tb {
+      margin-top: 32px;
+
+      .c-btn {
+        margin-right: inherit;
+        margin-left: auto;
+      }
+
+      @include pc {
+        margin-top: 40px;
+      }
+    }
+  }
+
+.p-profile__btn {
+  @extend %btn__margin-top;
+  @include tb {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-top: 0;
+  }
+}
+
+.p-contact__btn {
+  @extend %btn__margin-top;
+}
+
+.p-editor__btn {
+  @extend %btn__margin-top;
+}
+
+.c-heading-2 {
+  + .c-card,
+  + .c-photo-link,
+  + .p-profile-card {
+    margin-top: 24px;
+    @include sp-lg {
+      margin-top: 32px;
+      @include tb-sm {
+        margin-top: 40px;
+        @include tb {
+          margin-top: 48px;
+          @include pc {
+            margin-top: 56px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-heading-3 {
+  + .c-card,
+  + .c-photo-link,
+  + .p-profile-card {
+    margin-top: 16px;
+    @include sp-lg {
+      margin-top: 20px;
+      @include tb-sm {
+        margin-top: 24px;
+        @include tb {
+          margin-top: 32px;
+          @include pc {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+}

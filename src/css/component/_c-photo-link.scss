@@ -1,0 +1,158 @@
+$c-photo-link__margin: 6.25%;
+
+@mixin c-photo-link-hover {
+  .c-photo-link__item {
+    .c-photo-link__inner {
+      img {
+        transform: scale(1);
+        transition: transform 0.4s ease 0s;
+      }
+      .c-photo-link__details {
+        transition: bottom 0.4s ease 0s;
+        opacity: 1;
+      }
+
+      &:before {
+        transition: opacity 0.4s ease 0s;
+      }
+      &:after {
+        content: "CLICK";
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%,-50%);
+        @include font-family__en(300);
+        letter-spacing: 0.15em;
+        color: $color__overlay-txt;
+        font-size: 24px;
+        font-size: 2.4rem;
+        z-index: 2;
+        opacity: 0;
+        transition: top 0.4s ease 0s, opacity 0.4s ease 0s;
+      }
+    }
+    &:hover {
+      .c-photo-link__inner {
+        img {
+          transform: scale(1.2);
+          transition: transform 0.4s ease 0s;
+        }
+        .c-photo-link__details {
+          bottom: -6.25%;
+          transition: bottom 0.4s ease 0s, opacity 0.4s ease 0s;
+          opacity: 0;
+        }
+
+        &:before {
+          opacity: 0.7;
+          transition: opacity 0.4s ease 0s;
+        }
+        &:after {
+          top: 52%;
+          opacity: 0.8;
+          transition: top 0.4s ease 0s, opacity 0.4s ease 0s;
+        }
+      }
+    }
+  }
+}
+
+
+.c-photo-link {
+  @include pc {
+    @include c-photo-link-hover;
+  }
+
+  .c-photo-link__item {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    //padding-top: 61.667%;
+    padding-top: 61.6%;
+
+
+    .c-photo-link__inner {
+      @include overlay;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+
+      .c-photo-link__details {
+        position: absolute;
+        left: 0;
+        bottom: $c-photo-link__margin;
+        width: 100%;
+        color: $color__overlay-txt;
+        align-items: center;
+        z-index: 1;
+
+      }
+      .c-photo-link__ttl {
+        margin-left: $c-photo-link__margin;
+        margin-top: 3px;
+        .c-photo-link__ttl-main {
+          font-family: $font-family__jpn;
+          font-size: 14px;
+          font-size: 1.4rem;
+          line-height: 1;
+          font-weight: bold;
+          letter-spacing: 0.1em;
+
+          @include sp-lg {
+            font-size: 16px;
+            font-size: 1.6rem;
+
+            @include tb-sm {
+              font-size: 18px;
+              font-size: 1.8rem;
+
+              @include tb {
+                font-size: 17px;
+                font-size: 1.7rem;
+              }
+
+              @include pc {
+                font-size: 18px;
+                font-size: 1.8rem;
+              }
+            }
+          }
+        }
+        .c-photo-link__ttl-sub {
+          @include font-family__en(300);
+          font-size: 12px;
+          font-size: 1.2rem;
+          line-height: 1;
+          margin-top: 0.4em;
+          letter-spacing: 0.1em;
+          @include sp-lg {
+            font-size: 14px;
+            font-size: 1.4rem;
+
+            @include tb-sm {
+              font-size: 16px;
+              font-size: 1.6rem;
+
+              @include tb {
+                font-size: 15px;
+                font-size: 1.5rem;
+
+                @include pc {
+                  font-size: 16px;
+                  font-size: 1.6rem;
+                }
+
+              }
+            }
+          }
+        }
+      }
+      .c-btn__circle {
+        margin-right: $c-photo-link__margin;
+      }
+    }
+  }
+}

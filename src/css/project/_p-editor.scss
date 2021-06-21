@@ -1,0 +1,17 @@
+.p-editor {
+  p {
+    line-height: 1.8;
+  }
+  p + p {
+    margin-top: 1.8em;
+  }
+
+  h2 {
+    @extend .c-heading-3-main;
+    line-height: 1.2;
+
+    &:not(:last-child) {
+      margin-bottom: 0.8em;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.p-page {
+  @extend %block__padding;
+  .p-page__inner {
+    @extend %block__inner-sm;
+  }
+}

@@ -1,0 +1,194 @@
+.p-index-kv__inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .p-index-kv__item {
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    animation: slideshow 42s linear infinite;
+
+    @include pc {
+      background-attachment: fixed;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 10s;
+    }
+    &:nth-child(3) {
+      animation-delay: 18s;
+    }
+    &:nth-child(4) {
+      animation-delay: 26s;
+    }
+    &:nth-child(5) {
+      animation-delay: 32s;
+    }
+  }
+}
+
+@keyframes slideshow {
+  0% {
+    opacity: 0;
+    //transform: scale(1) ;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  28% {
+    opacity: 1;
+    //transform: scale(1.1) ;
+
+  }
+
+  38% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.webp .p-index-kv__item {
+
+  &:nth-child(1) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-2.webp);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-2.webp);
+    }
+  }
+
+  &:nth-child(2) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-3.webp);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-3.webp);
+
+    }
+  }
+
+  &:nth-child(3) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-4.webp);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-4.webp);
+
+    }
+  }
+
+  &:nth-child(4) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-5.webp);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-5.webp);
+    }
+  }
+
+  &:nth-child(5) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-1.webp);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-1.webp);
+    }
+  }
+
+}
+
+.no-webp .p-index-kv__item {
+
+  &:nth-child(1) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-2.jpg);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-2.jpg);
+
+    }
+
+  }
+
+  &:nth-child(2) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-3.jpg);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-3.jpg);
+
+    }
+
+  }
+
+  &:nth-child(3) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-4.jpg);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-4.jpg);
+
+    }
+
+  }
+
+  &:nth-child(4) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-5.jpg);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-4.jpg);
+
+    }
+
+  }
+
+  &:nth-child(5) {
+    background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-sp-1.jpg);
+
+    @include pc {
+      background-image: url(https://onophotography.com/wp/wp-content/uploads/2021/06/slide-pc-1.jpg);
+
+    }
+
+  }
+
+}
+
+/* $easeoriginal:  cubic-bezier(.1,.56,.21,1);
+
+.kv-animation .c-heading-logo {
+    animation: fade-in-up 1.2s $easeoriginal 0.4s both;
+}
+
+@for $i from 1 through 50 {
+   $DELAY: 0.6s + ($i * 0.2s);
+   .kv-animation .l-header__item:nth-of-type(#{$i}) {
+    animation: fade-in-up 1.2s $easeoriginal $DELAY both;
+  }
+}
+
+.kv-animation .p-index-kv__scr {
+  animation: fade-in-up 1.2s $easeoriginal 1.2s both;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+
+  }
+  100% {
+    transform: translateY(0px);
+  }
+} */
